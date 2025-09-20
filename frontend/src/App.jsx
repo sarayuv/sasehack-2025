@@ -15,7 +15,6 @@ function App() {
   return (
     <div className="App">
       <h1>Fred's Fridge</h1>
-      <ShoppingList />
       <ul>
         {shoppingList.map((item, index) => (
           <li key={index}>{item}</li>
