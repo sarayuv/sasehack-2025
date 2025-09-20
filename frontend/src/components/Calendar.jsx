@@ -78,6 +78,7 @@ const Calendar = ({ events, users, addEvent }) => {
                                     setFormDate("");
                                     setFormUser(users[0]?.name || "");
                                     setIsAddEventModalOpen(false);
+                                    setIsMonthModalOpen(true);
                                 }
                             }}
                         >
