@@ -6,7 +6,7 @@ import './App.css';
 function App() {
   // Shopping Lists
   const [shoppingList, setShoppingList] = useState([]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isShoppingModalOpen, setIsShoppingModalOpen] = useState(false);
 
   // Reminders
   const [reminders, setReminders] = useState([]);
@@ -51,8 +51,8 @@ function App() {
       <ShoppingList
         shoppingList={shoppingList}
         addItem={addItem}
-        isModalOpen={isModalOpen}
-        setIsModalOpen={setIsModalOpen}
+        isShoppingModalOpen={isShoppingModalOpen}
+        setIsShoppingModalOpen={setIsShoppingModalOpen}
         toggleCrossItem={toggleCrossItem}
       />
       <Reminders
