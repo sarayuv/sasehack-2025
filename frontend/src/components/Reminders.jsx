@@ -34,7 +34,7 @@ const Reminders = ({ reminders, addReminder, toggleCrossReminder, isRemindersMod
       {isRemindersModalOpen && (
         <div className="reminders-modal">
           <div className="reminders-modal-content">
-            <button className="reminders-close" onClick={() => setIsRemindersModalOpen(false)}>×</button>
+            <button className="reminders-close-button" onClick={() => setIsRemindersModalOpen(false)}>×</button>
             <h2>Reminders</h2>
             
             <div className="reminders-input-section">
@@ -45,7 +45,7 @@ const Reminders = ({ reminders, addReminder, toggleCrossReminder, isRemindersMod
                 placeholder="Add a reminder..."
                 className="reminders-input"
               />
-              <button onClick={handleAddReminder} className="reminders-add-button">Add</button>
+              <button onClick={handleAddReminder} className="reminders-button reminders-add-btn">+</button>
             </div>
 
             <div className="reminders-list">
