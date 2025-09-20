@@ -31,7 +31,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Fred's Fridge</h1>
       <div className='main-shopping-list' 
         style={{
           position: 'absolute',
