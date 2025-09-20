@@ -100,3 +100,9 @@ li {
 .open-shopping-list-button:hover {
     background-color: #d9a030;
 }
+
+.crossed {
+    text-decoration: line-through;
+    color: gray;
+    cursor: pointer;
+}
