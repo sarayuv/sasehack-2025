@@ -35,7 +35,6 @@ function App() {
         <button className='open-shopping-list-button' onClick={() => setIsModalOpen(true)}>Open Shopping List</button>
       </div>
       <ShoppingList shoppingList={shoppingList} addItem={addItem} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
-      <ReminderList />
       <ul>
         {reminderList.map((reminder, index) => (
           <li key={index}>{reminder}</li>
