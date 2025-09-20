@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import ShoppingList from './components/ShoppingList';
+import Reminders from './components/Reminders';
 import './App.css';
 
 function App() {
@@ -14,12 +15,14 @@ function App() {
   return (
     <div className="App">
       <h1>Fred's Fridge</h1>
+      <ShoppingList />
       <ul>
         {shoppingList.map((item, index) => (
           <li key={index}>{item}</li>
         ))}
       </ul>
       <ShoppingList shoppingList={shoppingList} addItem={addItem} />
+      <Reminders />
     </div>
   );
 }

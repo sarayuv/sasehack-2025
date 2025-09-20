@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import '../styles/ShoppingList.css';
 
 function ShoppingList({shoppingList, addItem}) {
