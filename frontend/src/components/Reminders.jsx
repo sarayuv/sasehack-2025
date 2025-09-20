@@ -1,20 +1,12 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
+import '../styles/Reminders.css';
 
-function Reminders() {
-  const [reminders, setReminder] = useState([]);
-  const [newReminders, setNewReminder] = useState("");
+function ReminderList({reminderList, addReminder}) {
+  const [newReminder, setNewReminder] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  useEffect(() => {
-    fetch("/api/reminders").then((response) => response.json()).then((data) => setReminders(data.items));
-  }, []);
-
-  const addReminder = () => {
-    fetch("/api/reminders", {
-      method: "POST",
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({item: newReminders}),
-    }).then((response) => response.json()).then((data) => setReminders(data.reminders));
+  const handleAddReminder = () => {
+    addReminder(newReminder);
     setNewReminder("");
     setIsModalOpen(false);
   }
@@ -28,18 +20,18 @@ function Reminders() {
             <div className='modal-content'>
               <h2>Shopping List</h2>
               <ul>
-                {reminders.map((reminder, index) => (
+                {reminderList.map((reminder, index) => (
                   <li key={index}>{reminder}</li>
                 ))}
               </ul>
               <input 
                 type="text" 
-                value={newReminders} 
-                onChange={(e) => setNewReminder(e.target.value)} 
+                value={newReminder} 
+                onChange={(e) => setNewItem(e.target.value)} 
                 placeholder="Add new reminder" 
               />
-              <button onClick={addReminder}>Add Reminder</button>
-              <button onClick={() => setIsModalOpen(false)}>Close</button>
+              <button onClick={handleAddReminder}>Add Reminder</button>
+              <button className='close-button' onClick={() => setIsModalOpen(false)}>Close</button>
             </div>
           </div>
         )}
@@ -47,4 +39,4 @@ function Reminders() {
   );
 }
 
-export default Reminders
+export default ReminderList

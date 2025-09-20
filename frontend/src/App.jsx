@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import ShoppingList from './components/ShoppingList';
 import Reminders from './components/Reminders';
 import './App.css';
+import ReminderList from './components/Reminders';
 
 function App() {
   const [shoppingList, setShoppingList] = useState([]);
@@ -10,6 +11,14 @@ function App() {
   const addItem = (newItem) => {
     if (newItem.trim()) {
       setShoppingList((prevList) => [...prevList, newItem]);
+    }
+  };
+
+  const [reminderList, setReminderList] = useState([]);
+
+  const addReminder = (newReminder) => {
+    if (newReminder.trim()) {
+      setReminderList((prevList) => [...prevList, newReminder]);
     }
   };
 
@@ -26,7 +35,13 @@ function App() {
         <button className='open-shopping-list-button' onClick={() => setIsModalOpen(true)}>Open Shopping List</button>
       </div>
       <ShoppingList shoppingList={shoppingList} addItem={addItem} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
-      <Reminders />
+      <ReminderList />
+      <ul>
+        {reminderList.map((reminder, index) => (
+          <li key={index}>{reminder}</li>
+        ))}
+      </ul>
+      <ReminderList reminderList={reminderList} addReminder={addReminder} />
 
       <div style={{ height:'210vh'}}></div>
     </div>
