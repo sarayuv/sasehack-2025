@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="500" viewBox="0 0 300 500">
+  <defs>
+    <linearGradient id="fridgeGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f5f5f5"/>
+      <stop offset="100%" stop-color="#bfbfbf"/>
+    </linearGradient>
+
+    <!-- Subtle shadow filter for depth -->
+    <filter id="magnetShadow" x="-100%" y="-100%" width="300%" height="300%">
+      <feDropShadow dx="1" dy="2" stdDeviation="1.5" flood-color="rgba(0,0,0,0.25)"/>
+      <feDropShadow dx="0.5" dy="1" stdDeviation="0.5" flood-color="rgba(0,0,0,0.15)"/>
+    </filter>
+
+    <!-- Bright vibrant 3D text gradients -->
+    <linearGradient id="redText" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FF6666"/>
+      <stop offset="50%" stop-color="#FF3333"/>
+      <stop offset="100%" stop-color="#DD1111"/>
+    </linearGradient>
+    <linearGradient id="tealText" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#44DDCC"/>
+      <stop offset="50%" stop-color="#22CCBB"/>
+      <stop offset="100%" stop-color="#11AAAA"/>
+    </linearGradient>
+    <linearGradient id="blueText" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#44BBFF"/>
+      <stop offset="50%" stop-color="#2299EE"/>
+      <stop offset="100%" stop-color="#1177CC"/>
+    </linearGradient>
+    <linearGradient id="greenText" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#88DDAA"/>
+      <stop offset="50%" stop-color="#66BB88"/>
+      <stop offset="100%" stop-color="#449966"/>
+    </linearGradient>
+    <linearGradient id="yellowText" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFCC44"/>
+      <stop offset="50%" stop-color="#FFAA22"/>
+      <stop offset="100%" stop-color="#DD8800"/>
+    </linearGradient>
+    <linearGradient id="purpleText" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#DD99DD"/>
+      <stop offset="50%" stop-color="#BB77BB"/>
+      <stop offset="100%" stop-color="#995599"/>
+    </linearGradient>
+    <linearGradient id="mintText" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#99EECC"/>
+      <stop offset="50%" stop-color="#77DDAA"/>
+      <stop offset="100%" stop-color="#55BB88"/>
+    </linearGradient>
+    <linearGradient id="goldText" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFDD66"/>
+      <stop offset="50%" stop-color="#FFCC44"/>
+      <stop offset="100%" stop-color="#DDAA22"/>
+    </linearGradient>
+    <linearGradient id="lavenderText" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#BB88DD"/>
+      <stop offset="50%" stop-color="#9966BB"/>
+      <stop offset="100%" stop-color="#774499"/>
+    </linearGradient>
+    <linearGradient id="skyText" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#77BBFF"/>
+      <stop offset="50%" stop-color="#5599DD"/>
+      <stop offset="100%" stop-color="#3377BB"/>
+    </linearGradient>
+    <linearGradient id="peachText" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFBB66"/>
+      <stop offset="50%" stop-color="#FF9944"/>
+      <stop offset="100%" stop-color="#DD7722"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="300" height="500" fill="#dcdcdc"/>
+
+  <!-- Main fridge body -->
+  <rect x="20" y="20" width="260" height="460" rx="20" fill="url(#fridgeGradient)" stroke="#555" stroke-width="2"/>
+
+  <!-- Center divider line -->
+  <line x1="150" y1="25" x2="150" y2="475" stroke="#aaa" stroke-width="2"/>
+
+  <!-- Left door handle -->
+  <rect x="130" y="150" width="8" height="200" rx="4" fill="black"/>
+
+  <!-- Right door handle -->
+  <rect x="162" y="150" width="8" height="200" rx="4" fill="black"/>
+
+  <!-- FREDS -->
+  <g>
+    <text x="38" y="55" text-anchor="middle" font-size="18" font-family="Arial, sans-serif"
+          font-weight="900" fill="url(#redText)" filter="url(#magnetShadow)"
+          transform="rotate(-8 38 55)">F</text>
+
+    <text x="58" y="52" text-anchor="middle" font-size="18" font-family="Arial, sans-serif"
+          font-weight="900" fill="url(#tealText)" filter="url(#magnetShadow)"
+          transform="rotate(5 58 52)">R</text>
+
+    <text x="78" y="58" text-anchor="middle" font-size="18" font-family="Arial, sans-serif"
+          font-weight="900" fill="url(#blueText)" filter="url(#magnetShadow)"
+          transform="rotate(-3 78 58)">E</text>
+
+    <text x="98" y="54" text-anchor="middle" font-size="18" font-family="Arial, sans-serif"
+          font-weight="900" fill="url(#greenText)" filter="url(#magnetShadow)"
+          transform="rotate(7 98 54)">D</text>
+
+    <text x="118" y="50" text-anchor="middle" font-size="18" font-family="Arial, sans-serif"
+          font-weight="900" fill="url(#yellowText)" filter="url(#magnetShadow)"
+          transform="rotate(-6 118 50)">S</text>
+  </g>
+
+  <!-- FRIDGE -->
+  <g>
+    <text x="158" y="56" text-anchor="middle" font-size="18" font-family="Arial, sans-serif"
+          font-weight="900" fill="url(#purpleText)" filter="url(#magnetShadow)"
+          transform="rotate(4 158 56)">F</text>
+
+    <text x="178" y="51" text-anchor="middle" font-size="18" font-family="Arial, sans-serif"
+          font-weight="900" fill="url(#mintText)" filter="url(#magnetShadow)"
+          transform="rotate(-7 178 51)">R</text>
+
+    <text x="193" y="57" text-anchor="middle" font-size="18" font-family="Arial, sans-serif"
+          font-weight="900" fill="url(#goldText)" filter="url(#magnetShadow)"
+          transform="rotate(2 193 57)">I</text>
+
+    <text x="213" y="59" text-anchor="middle" font-size="18" font-family="Arial, sans-serif"
+          font-weight="900" fill="url(#lavenderText)" filter="url(#magnetShadow)"
+          transform="rotate(6 213 59)">D</text>
+
+    <text x="233" y="53" text-anchor="middle" font-size="18" font-family="Arial, sans-serif"
+          font-weight="900" fill="url(#skyText)" filter="url(#magnetShadow)"
+          transform="rotate(-5 233 53)">G</text>
+
+    <text x="253" y="49" text-anchor="middle" font-size="18" font-family="Arial, sans-serif"
+          font-weight="900" fill="url(#peachText)" filter="url(#magnetShadow)"
+          transform="rotate(8 253 49)">E</text>
+  </g>
+</svg>
