@@ -1,0 +1,46 @@
+.photos {
+  position: absolute; 
+  cursor: grab;
+}
+
+.upload-label {
+  background: #f0c040;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.upload-label:hover {
+  background: #d9a030;
+  transform: scale(1.05);
+}
+
+.photo-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.photo {
+  width: 120px;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  border: 3px solid white;
+}
+
+/* Small circle "magnet" holding the photo */
+.magnet {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: crimson;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}

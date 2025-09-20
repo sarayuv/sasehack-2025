@@ -1,3 +1,9 @@
+import React, { useState, useEffect } from 'react';
+import ShoppingList from './components/ShoppingList';
+import Reminders from './components/Reminders';
+import Notes from './components/Notes';
+import Photos from './components/Photos';
+import Calendar from './components/Calendar';
 import React, {useState, useEffect} from 'react';
 import ShoppingList from './components/ShoppingList';
 import Reminders from './components/Reminders';
@@ -7,6 +13,11 @@ import './App.css';
 
 function App() {
   // Users
+  const users = ['Sarayu', 'Abhi', 'Sriram', 'Sita', 'Shiva'];
+  const [currentUser, setCurrentUser] = useState("");
+
+  // Reset key for Photos
+  const [photoResetKey, setPhotoResetKey] = useState(0);
   const users = [
     { name: 'Sarayu', color: '#FFB6C1' },
     { name: 'Abhi', color: '#87CEEB' },
@@ -15,6 +26,8 @@ function App() {
     { name: 'Shiva', color: '#DDA0DD' }
   ];
   const [currentUser, setCurrentUser] = useState(users[0].name);
+  // Reset key for Photos
+  const [photoResetKey, setPhotoResetKey] = useState(0);
 
   // Shopping Lists
   const [shoppingList, setShoppingList] = useState(() => {
@@ -107,6 +120,7 @@ function App() {
     setReminders([]);
     setNotes([]);
     setEvents([]);
+    setPhotoResetKey(prev => prev + 1); // reset all Photos
     localStorage.setItem('shoppingList', JSON.stringify([]));
     localStorage.setItem('reminders', JSON.stringify([]));
     localStorage.setItem('notes', JSON.stringify([]));
@@ -128,7 +142,9 @@ function App() {
     <div className="App">
       <select className="user-dropdown" value={currentUser} onChange={(e) => setCurrentUser(e.target.value)}>
         {users.map(user => (
+
           <option key={user.name} value={user.name}>{user.name}</option>
+
         ))}
       </select>
 
@@ -164,6 +180,12 @@ function App() {
         setIsNotesModalOpen={setIsNotesModalOpen}
       />
 
+
+      {/* Photos positioned at your previous coordinates */}
+      <Photos key={`photo1-${photoResetKey}`} x={500} y={450} resetKey={photoResetKey} />
+      <Photos key={`photo2-${photoResetKey}`} x={500} y={800} resetKey={photoResetKey} />
+      <Photos key={`photo3-${photoResetKey}`} x={200} y={300} resetKey={photoResetKey} />
+      <Photos key={`photo4-${photoResetKey}`} x={200} y={300} resetKey={photoResetKey} />
       <Calendar events={events} users={users} addEvent={addEvent} />
 
       <div style={{ height:'200vh'}}></div>
