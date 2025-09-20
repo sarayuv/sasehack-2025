@@ -50,6 +50,16 @@ const Calendar = ({ events, users, addEvent }) => {
                     <div className="calendar-modal-content calendar-modal-month">
                         <button className="calendar-close-button" onClick={() => setIsMonthModalOpen(false)}>×</button>
                         <MonthCalendar events={events} users={users} />
+                            <button
+                                className="calendar-add-button"
+                                style={{marginTop: '24px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
+                                onClick={() => {
+                                    setIsMonthModalOpen(false);
+                                    setIsAddEventModalOpen(true);
+                                }}
+                            >
+                                + Add Event
+                            </button>
                     </div>
                 </div>
             )}
