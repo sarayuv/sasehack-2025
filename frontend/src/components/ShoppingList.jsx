@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import '../styles/ShoppingList.css';
 
 const ShoppingList = ({ shoppingList, addItem, isShoppingModalOpen, setIsShoppingModalOpen, toggleCrossItem }) => {

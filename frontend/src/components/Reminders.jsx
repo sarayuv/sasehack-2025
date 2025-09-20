@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import '../styles/Reminders.css';
 
 const Reminders = ({ reminders, addReminder, toggleCrossReminder, isRemindersModalOpen, setIsRemindersModalOpen }) => {
