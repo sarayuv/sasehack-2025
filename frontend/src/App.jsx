@@ -98,7 +98,7 @@ function App() {
     <div className="App">
       <button 
         className="clear-fridge-button" 
-        style={{position: 'fixed', top: '40px', right: '200px', zIndex: 2000}}
+        style={{position: 'fixed', top: '70px', right: '60px', zIndex: 2000}}
         onClick={clearFridge}
       >
         Clear Fridge
