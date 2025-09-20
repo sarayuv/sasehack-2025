@@ -37,6 +37,10 @@ li {
     margin: 10px 10px;
 }
 
+.modal-content h2 {
+    font-weight: bold;
+}
+
 .modal-content button {
     padding: 10px 20px;
     background: #f0c040;
@@ -84,6 +88,10 @@ li {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.main-shopping-list h2 {
+    font-weight: bold;
 }
 
 .open-shopping-list-button {
