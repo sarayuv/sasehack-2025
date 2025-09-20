@@ -1,6 +1,6 @@
-import React from 'react'
-import {useState, useEffect} from 'react'
-import ShoppingList from './components/ShoppingList'
+import ShoppingList from './components/ShoppingList';
+import Reminders from './components/Reminders';
+import './App.css';
 
 function App() {
   return (
@@ -10,8 +10,9 @@ function App() {
         <h2>Fridge</h2>
       </div>
       <ShoppingList />
+      <Reminders />
     </div>
   );
 }
 
-export default App
+export default App;
