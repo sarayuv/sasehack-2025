@@ -4,7 +4,6 @@ import '../styles/Photos.css';
 export default function Photos({ x = 50, y = 100, resetKey }) {
   const [uploadedPhoto, setUploadedPhoto] = useState(null);
 
-  // Reset photo when clear fridge is pressed
   useEffect(() => {
     setUploadedPhoto(null);
   }, [resetKey]);
