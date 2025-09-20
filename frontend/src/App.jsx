@@ -5,6 +5,10 @@ import Notes from './components/Notes';
 import './App.css';
 
 function App() {
+  // Users
+  const users = ['Sarayu', 'Abhi', 'Sriram', 'Sita', 'Shiva'];
+  const [currentUser, setCurrentUser] = useState("");
+
   // Shopping Lists
   const [shoppingList, setShoppingList] = useState(() => {
     const saved = localStorage.getItem('shoppingList');
@@ -96,6 +100,12 @@ function App() {
 
   return (
     <div className="App">
+      <select className="user-dropdown" value={currentUser} onChange={(e) => setCurrentUser(e.target.value)}>
+        {users.map(user => (
+          <option key={user} value={user}>{user}</option>
+        ))}
+      </select>
+
       <button 
         className="clear-fridge-button" 
         style={{position: 'fixed', top: '70px', right: '60px', zIndex: 2000}}
@@ -103,6 +113,7 @@ function App() {
       >
         Clear Fridge
       </button>
+
       <ShoppingList
         shoppingList={shoppingList}
         addItem={addItem}
@@ -110,6 +121,7 @@ function App() {
         setIsShoppingModalOpen={setIsShoppingModalOpen}
         toggleCrossItem={toggleCrossItem}
       />
+
       <Reminders
         reminders={reminders}
         addReminder={addReminder}
@@ -117,6 +129,7 @@ function App() {
         setIsRemindersModalOpen={setIsRemindersModalOpen}
         toggleCrossReminder={toggleCrossReminder}
       />
+      
       <Notes
         notes={notes}
         addNote={addNote}
@@ -124,7 +137,9 @@ function App() {
         isNotesModalOpen={isNotesModalOpen}
         setIsNotesModalOpen={setIsNotesModalOpen}
       />
-      <div style={{ height:'210vh'}}></div>
+
+      <div style={{ height:'200vh'}}></div>
+
     </div>
   );
 }
