@@ -30,7 +30,7 @@ const Notes = ({ notes, addNote, deleteNote, isNotesModalOpen, setIsNotesModalOp
       <button 
         className="add-sticky-button" 
         onClick={() => setIsNotesModalOpen(true)}
-        style={{ position: 'fixed', top: '40px', right: '60px', zIndex: 2000 }}
+        style={{ position: 'fixed', top: '120px', right: '60px', zIndex: 2000 }}
       >
         + Add Sticky
       </button>
@@ -54,6 +54,9 @@ const Notes = ({ notes, addNote, deleteNote, isNotesModalOpen, setIsNotesModalOp
               ×
             </button>
             <div className="note-text">{note.text}</div>
+            <div className="note-user" style={{fontSize: '0.7em', marginTop: '8px', color: '#333'}}>
+              {note.user && '- ' + note.user}
+            </div>
           </div>
         ))}
       </div>
