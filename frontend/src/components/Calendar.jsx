@@ -32,9 +32,9 @@ const Calendar = ({ events, users, addEvent }) => {
     return (
         <>
             <img
-                src="/calendar.svg"
-                alt="Month Calendar"
-                style={{ position: 'absolute', top: '320px', left: '60px', width: '600px', cursor: 'pointer', zIndex: 100 }}
+                src="../../public/calendar.svg"
+                alt="Monthly Calendar"
+                style={{position: 'absolute', top: '200px', right: '370px', width: '250px', cursor: 'pointer', zIndex: 100}}
                 onClick={() => setIsMonthModalOpen(true)}
             />
 
@@ -135,7 +135,7 @@ function MonthCalendar({ events, users }) {
 
     return (
         <div className="calendar-month-view">
-            <h2 style={{marginBottom: '16px'}}>{today.toLocaleString(undefined, { month: 'long', year: 'numeric' })}</h2>
+            <h2 style={{marginBottom: '16px', fontSize: '2.5em', fontWeight: 'bold', textAlign: 'center', letterSpacing: '2px'}}>{today.toLocaleString(undefined, { month: 'long', year: 'numeric' })}</h2>
             <div className="calendar-month-grid" style={{display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '8px'}}>
                 {["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].map(day => (
                     <div key={day} style={{fontWeight: 'bold', textAlign: 'center', marginBottom: '4px'}}>{day}</div>
