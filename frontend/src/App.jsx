@@ -8,6 +8,7 @@ function App() {
   const [shoppingList, setShoppingList] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [crossedItems, setCrossedItems] = useState({});
+  const [reminderList, setReminderList] = useState([]);
 
   const addItem = (newItem) => {
     if (newItem.trim()) {
@@ -20,9 +21,7 @@ function App() {
       ...prev,
       [index]: !prev[index],
     }));
-  }
-
-  const [reminderList, setReminderList] = useState([]);
+  };
 
   const addReminder = (newReminder) => {
     if (newReminder.trim()) {
@@ -37,7 +36,7 @@ function App() {
         <h2>Shopping List</h2>
         <ul>
           {shoppingList.map((item, index) => (
-            <li key={index} className={crossedItems[index] ? "crossed" : ""} onClick={() => toggleCross(index)}>{item}</li>
+            <li key={index} className={crossedItems[index] ? "crossed" : ""} onClick={() => toggleCrossItem(index)}>{item}</li>
           ))}
         </ul>
         <button className='open-shopping-list-button' onClick={() => setIsModalOpen(true)}>Open</button>
