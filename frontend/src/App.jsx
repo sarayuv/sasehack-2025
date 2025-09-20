@@ -22,6 +22,8 @@ function App() {
       </ul>
       <ShoppingList shoppingList={shoppingList} addItem={addItem} />
       <Reminders />
+
+      <div style={{ height:'210vh'}}></div>
     </div>
   );
 }
