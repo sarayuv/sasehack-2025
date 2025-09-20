@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import ShoppingList from './components/ShoppingList';
 import Reminders from './components/Reminders';
+import Notes from './components/Notes';
 import './App.css';
 
 function App() {
@@ -11,6 +12,10 @@ function App() {
   // Reminders
   const [reminders, setReminders] = useState([]);
   const [isRemindersModalOpen, setIsRemindersModalOpen] = useState(false);
+
+  // Notes
+  const [notes, setNotes] = useState([]);
+  const [isNotesModalOpen, setIsNotesModalOpen] = useState(false);
 
   // Shopping List Logic
   const addItem = (text) => {
@@ -46,6 +51,19 @@ function App() {
     );
   };
 
+  // Notes Logic
+  const addNote = (text, color) => {
+    if (text.trim()) {
+      setNotes((prev) => [
+        ...prev,
+        { id: Date.now() + Math.random(), text, color }
+      ]);
+    }
+  };
+  const deleteNote = (id) => {
+    setNotes((prev) => prev.filter(note => note.id !== id));
+  };
+
   return (
     <div className="App">
       <ShoppingList
@@ -61,6 +79,13 @@ function App() {
         isRemindersModalOpen={isRemindersModalOpen}
         setIsRemindersModalOpen={setIsRemindersModalOpen}
         toggleCrossReminder={toggleCrossReminder}
+      />
+      <Notes
+        notes={notes}
+        addNote={addNote}
+        deleteNote={deleteNote}
+        isNotesModalOpen={isNotesModalOpen}
+        setIsNotesModalOpen={setIsNotesModalOpen}
       />
       <div style={{ height:'210vh'}}></div>
     </div>
