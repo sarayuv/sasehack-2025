@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import ShoppingList from './components/ShoppingList';
 import Reminders from './components/Reminders';
-import Notes from './components/Notes'; 
 import './App.css';
 import ReminderList from './components/Reminders';
 
@@ -55,11 +54,6 @@ function App() {
         ))}
       </ul>
       <ReminderList reminderList={reminderList} addReminder={addReminder} />
-      
-      <div className="notes-section">
-        <h2>Sticky Notes</h2>
-        <Notes />
-      </div>
 
       <div style={{ height:'210vh'}}></div>
     </div>
