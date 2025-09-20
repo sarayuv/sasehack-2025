@@ -32,7 +32,13 @@ function App() {
   return (
     <div className="App">
       <h1>Fred's Fridge</h1>
-      <div className='main-shopping-list'>
+      <div className='main-shopping-list' 
+        style={{
+          position: 'absolute',
+          top: '120px',
+          left: '320px',
+        }}
+      >
         <h2>Shopping List</h2>
         <ul>
           {shoppingList.map((item, index) => (
