@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import '../styles/ShoppingList.css';
 
 const ShoppingList = ({ shoppingList, addItem, isShoppingModalOpen, setIsShoppingModalOpen, toggleCrossItem }) => {
@@ -55,7 +55,7 @@ const ShoppingList = ({ shoppingList, addItem, isShoppingModalOpen, setIsShoppin
                 placeholder="Add a new item..."
                 className="shopping-input"
               />
-              <button onClick={handleAddItem} className="shopping-button">Add</button>
+              <button onClick={handleAddItem} className="shopping-button shopping-add-btn">+</button>
             </div>
           </div>
         </div>
