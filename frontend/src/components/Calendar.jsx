@@ -32,34 +32,33 @@ const Calendar = ({ events, users, addEvent }) => {
     return (
         <>
             <img
-                src="../../public/calendar.svg"
+                src="/calendar.svg"
                 alt="Monthly Calendar"
-                style={{position: 'absolute', top: '200px', right: '370px', width: '250px', cursor: 'pointer', zIndex: 100}}
+                className="calendar-fridge-image"
                 onClick={() => setIsMonthModalOpen(true)}
             />
 
             <button
-                className="calendar-add-button"
-                style={{ position: 'absolute', top: '940px', left: '60px', zIndex: 101 }}
+                className="calendar-add-button calendar-add-event-btn"
                 onClick={() => setIsAddEventModalOpen(true)}
             >
                 + Add Event
             </button>
 
             {isMonthModalOpen && (
-                <div className="calendar-modal" style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.3)', zIndex: 3000, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <div className="calendar-modal-content" style={{ background: '#fff', padding: '32px 24px', borderRadius: '16px', minWidth: '700px', maxWidth: '1200px', width: '90vw', boxShadow: '0 4px 24px rgba(0,0,0,0.2)', position: 'relative' }}>
-                        <button className="calendar-close-button" style={{ position: 'absolute', top: '12px', right: '16px', background: 'none', border: 'none', fontSize: '1.5em', color: '#333', cursor: 'pointer' }} onClick={() => setIsMonthModalOpen(false)}>×</button>
+                <div className="calendar-modal">
+                    <div className="calendar-modal-content calendar-modal-month">
+                        <button className="calendar-close-button" onClick={() => setIsMonthModalOpen(false)}>×</button>
                         <MonthCalendar events={events} users={users} />
                     </div>
                 </div>
             )}
 
             {isAddEventModalOpen && (
-                <div className="calendar-modal" style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.3)', zIndex: 3000, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <div className="calendar-modal-content" style={{ background: '#fff', padding: '32px 24px', borderRadius: '16px', minWidth: '400px', maxWidth: '90vw', boxShadow: '0 4px 24px rgba(0,0,0,0.2)', position: 'relative' }}>
-                        <button className="calendar-close-button" style={{ position: 'absolute', top: '12px', right: '16px', background: 'none', border: 'none', fontSize: '1.5em', color: '#333', cursor: 'pointer' }} onClick={() => setIsAddEventModalOpen(false)}>×</button>
-                        <h2>Add Event</h2>
+                <div className="calendar-modal">
+                    <div className="calendar-modal-content calendar-modal-add">
+                        <button className="calendar-close-button" onClick={() => setIsAddEventModalOpen(false)}>×</button>
+                        <h2 className="calendar-add-title">Add Event</h2>
                         <form
                             onSubmit={e => {
                                 e.preventDefault();
@@ -78,7 +77,7 @@ const Calendar = ({ events, users, addEvent }) => {
                                 value={formTitle}
                                 onChange={e => setFormTitle(e.target.value)}
                                 required
-                                style={{ width: '100%', marginBottom: '12px', padding: '8px', fontSize: '1em', borderRadius: '6px', border: '1px solid #ccc' }}
+                                className="calendar-input"
                             />
                             <input
                                 name="date"
@@ -86,20 +85,20 @@ const Calendar = ({ events, users, addEvent }) => {
                                 value={formDate}
                                 onChange={e => setFormDate(e.target.value)}
                                 required
-                                style={{ width: '100%', marginBottom: '12px', padding: '8px', fontSize: '1em', borderRadius: '6px', border: '1px solid #ccc' }}
+                                className="calendar-input"
                             />
                             <select
                                 name="user"
                                 value={formUser}
                                 onChange={e => setFormUser(e.target.value)}
                                 required
-                                style={{ width: '100%', marginBottom: '12px', padding: '8px', fontSize: '1em', borderRadius: '6px', border: '1px solid #ccc' }}
+                                className="calendar-input"
                             >
                                 {users.map(u => (
                                     <option key={u.name} value={u.name}>{u.name}</option>
                                 ))}
                             </select>
-                            <button type="submit" className="calendar-add-button" style={{ width: '100%' }}>Add</button>
+                            <button type="submit" className="calendar-add-button calendar-add-submit">Add</button>
                         </form>
                     </div>
                 </div>

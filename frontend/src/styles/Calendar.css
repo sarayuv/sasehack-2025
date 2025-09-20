@@ -1,3 +1,50 @@
+.calendar-fridge-image {
+  position: absolute;
+  top: 200px;
+  right: 370px;
+  width: 250px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.calendar-add-event-btn {
+  position: fixed;
+  top: 155px;
+  right: 60px;
+  z-index: 101;
+}
+
+.calendar-modal-month {
+  min-width: 700px;
+  max-width: 1200px;
+  width: 90vw;
+}
+
+.calendar-modal-add {
+  min-width: 400px;
+  max-width: 90vw;
+}
+
+.calendar-add-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.calendar-input {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 8px;
+  font-size: 1em;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.calendar-add-submit {
+  width: 100%;
+}
 .calendar-modal {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
