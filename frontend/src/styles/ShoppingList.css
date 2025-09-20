@@ -19,15 +19,35 @@ li {
     align-items: center;
 }
 
-.modal-content {
-    background: rgb(254, 236, 155);
+.modal .modal-content {
+    background: rgb(254, 236, 155) !important;
     padding: 20px;
     border-radius: 10px;
-    width: 90%;
-    max-width: 500px;
+    width: 80% !important;
+    max-width: 250px !important;
     text-align: center;
     position: relative;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    background: #f0c040;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.modal-content button:hover {
+    background: #d9a030;
+    transform: scale(1.05);
+}
+
+.modal-content button:active {
+    transform: scale(0.95);
 }
 
 .close-button {

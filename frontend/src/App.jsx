@@ -32,7 +32,7 @@ function App() {
             <li key={index}>{item}</li>
           ))}
         </ul>
-        <button className='open-shopping-list-button' onClick={() => setIsModalOpen(true)}>Open Shopping List</button>
+        <button className='open-shopping-list-button' onClick={() => setIsModalOpen(true)}>Open</button>
       </div>
       <ShoppingList shoppingList={shoppingList} addItem={addItem} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
       <ul>
