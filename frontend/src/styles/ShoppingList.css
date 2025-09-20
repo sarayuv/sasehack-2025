@@ -61,20 +61,25 @@ li {
     transform: scale(0.95);
 }
 
-.close-button {
+.modal-content button.close-button {
     position: absolute;
     top: 10px;
     right: 10px;
     background: none;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: black;
     cursor: pointer;
-    transition: color 0.3s ease;
+    border-radius: 50%;
+    width: 5px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.close-button:hover {
-    background-color: red;
+.modal-content button.close-button:hover {
+    background-color: rgb(255, 47, 47);
 }
 
 .main-shopping-list {
