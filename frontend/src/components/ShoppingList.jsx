@@ -1,21 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import '../styles/ShoppingList.css';
 
-function ShoppingList() {
-  const [items, setItems] = useState([]);
+function ShoppingList({shoppingList, addItem}) {
   const [newItem, setNewItem] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  useEffect(() => {
-    fetch("/api/shopping-list").then((response) => response.json()).then((data) => setItems(data.items));
-  }, []);
-
-  const addItem = () => {
-    fetch("/api/shopping-list", {
-      method: "POST",
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({item: newItem}),
-    }).then((response) => response.json()).then((data) => setItems(data.items));
+  const handleAddItem = () => {
+    addItem(newItem);
     setNewItem("");
     setIsModalOpen(false);
   }
@@ -29,7 +20,7 @@ function ShoppingList() {
             <div className='modal-content'>
               <h2>Shopping List</h2>
               <ul>
-                {items.map((item, index) => (
+                {shoppingList.map((item, index) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
@@ -39,8 +30,8 @@ function ShoppingList() {
                 onChange={(e) => setNewItem(e.target.value)} 
                 placeholder="Add new item" 
               />
-              <button onClick={addItem}>Add Item</button>
-              <button onClick={() => setIsModalOpen(false)}>Close</button>
+              <button onClick={handleAddItem}>Add Item</button>
+              <button className='close-button' onClick={() => setIsModalOpen(false)}>Close</button>
             </div>
           </div>
         )}
