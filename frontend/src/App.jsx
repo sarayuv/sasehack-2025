@@ -7,12 +7,20 @@ import ReminderList from './components/Reminders';
 function App() {
   const [shoppingList, setShoppingList] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [crossedItems, setCrossedItems] = useState({});
 
   const addItem = (newItem) => {
     if (newItem.trim()) {
       setShoppingList((prevList) => [...prevList, newItem]);
     }
   };
+
+  const toggleCrossItem = (index) => {
+    setCrossedItems((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  }
 
   const [reminderList, setReminderList] = useState([]);
 
@@ -29,12 +37,12 @@ function App() {
         <h2>Shopping List</h2>
         <ul>
           {shoppingList.map((item, index) => (
-            <li key={index}>{item}</li>
+            <li key={index} className={crossedItems[index] ? "crossed" : ""} onClick={() => toggleCross(index)}>{item}</li>
           ))}
         </ul>
         <button className='open-shopping-list-button' onClick={() => setIsModalOpen(true)}>Open</button>
       </div>
-      <ShoppingList shoppingList={shoppingList} addItem={addItem} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+      <ShoppingList shoppingList={shoppingList} addItem={addItem} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} crossedItems={crossedItems} toggleCrossItem={toggleCrossItem} />
       <ul>
         {reminderList.map((reminder, index) => (
           <li key={index}>{reminder}</li>

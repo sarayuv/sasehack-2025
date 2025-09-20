@@ -1,22 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import '../styles/ShoppingList.css';
 
-function ShoppingList({shoppingList, addItem, isModalOpen, setIsModalOpen}) {
+function ShoppingList({shoppingList, addItem, isModalOpen, setIsModalOpen, crossedItems, toggleCrossItem}) {
   const [newItem, setNewItem] = useState("");
-  const [crossedItems, setCrossedItems] = useState({});
 
   const handleAddItem = () => {
     addItem(newItem);
     setNewItem("");
     setIsModalOpen(false);
   }
-
-  const toggleCross = (index) => {
-    setCrossedItems((prev) => ({
-      ...prev,
-      [index]: !prev[index],
-    }));
-  };
 
   return (
       <div className='shopping-list'>
@@ -27,7 +19,7 @@ function ShoppingList({shoppingList, addItem, isModalOpen, setIsModalOpen}) {
               <h2>Shopping List</h2>
               <ul>
                 {shoppingList.map((item, index) => (
-                  <li key={index} className={crossedItems[index] ? "crossed" : ""} onClick={() => toggleCross(index)}>{item}</li>
+                  <li key={index} className={crossedItems[index] ? "crossed" : ""} onClick={() => toggleCrossItem(index)}>{item}</li>
                 ))}
               </ul>
               <input 
