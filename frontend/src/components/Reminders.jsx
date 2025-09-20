@@ -1,42 +1,70 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState } from 'react';
 import '../styles/Reminders.css';
 
-function ReminderList({reminderList, addReminder}) {
-  const [newReminder, setNewReminder] = useState("");
-  const [isModalOpen, setIsModalOpen] = useState(false);
+const Reminders = ({ reminders, addReminder, toggleCrossReminder, isRemindersModalOpen, setIsRemindersModalOpen }) => {
+  const [newReminder, setNewReminder] = useState('');
 
   const handleAddReminder = () => {
-    addReminder(newReminder);
-    setNewReminder("");
-    setIsModalOpen(false);
-  }
+    if (newReminder.trim()) {
+      addReminder(newReminder);
+      setNewReminder('');
+    }
+  };
 
   return (
-      <div className='reminders'>
-        <button onClick={() => setIsModalOpen(true)}>Open Reminders</button>
+    <div className="main-reminders-list" style={{ position: 'absolute', left: '540px', top: '80px' }}>
+      <h2>Reminders</h2>
+      <div>
+        {reminders.slice(0, 3).map(reminder => (
+          <div key={reminder.id}>
+            <span 
+              className={reminder.crossedOut ? 'reminders-crossed' : ''} 
+              onClick={() => toggleCrossReminder(reminder.id)}
+            >
+              {reminder.text}
+            </span>
+          </div>
+        ))}
+      </div>
+      
+      <button className="open-reminders-list-button" onClick={() => setIsRemindersModalOpen(true)}>
+        Open
+      </button>
 
-        {isModalOpen && (
-          <div className='modal'>
-            <div className='modal-content'>
-              <h2>Shopping List</h2>
-              <ul>
-                {reminderList.map((reminder, index) => (
-                  <li key={index}>{reminder}</li>
-                ))}
-              </ul>
-              <input 
-                type="text" 
-                value={newReminder} 
-                onChange={(e) => setNewItem(e.target.value)} 
-                placeholder="Add new reminder" 
+      {isRemindersModalOpen && (
+        <div className="reminders-modal">
+          <div className="reminders-modal-content">
+            <button className="reminders-close" onClick={() => setIsRemindersModalOpen(false)}>×</button>
+            <h2>Reminders</h2>
+            
+            <div className="reminders-input-section">
+              <input
+                type="text"
+                value={newReminder}
+                onChange={(e) => setNewReminder(e.target.value)}
+                placeholder="Add a reminder..."
+                className="reminders-input"
               />
-              <button onClick={handleAddReminder}>Add Reminder</button>
-              <button className='close-button' onClick={() => setIsModalOpen(false)}>Close</button>
+              <button onClick={handleAddReminder} className="reminders-add-button">Add</button>
+            </div>
+
+            <div className="reminders-list">
+              {reminders.map(reminder => (
+                <div key={reminder.id} className="reminders-item">
+                  <span 
+                    className={reminder.crossedOut ? 'reminders-crossed' : ''} 
+                    onClick={() => toggleCrossReminder(reminder.id)}
+                  >
+                    {reminder.text}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
+    </div>
   );
-}
+};
 
-export default ReminderList
+export default Reminders;

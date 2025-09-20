@@ -1,13 +1,13 @@
-ul {
+.reminders-list ul {
     list-style-type: none;
     padding: 0;
 }
 
-li {
+.reminders-list li {
     margin: 0.5rem 0;
 }
 
-.modal {
+.reminders-modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -17,27 +17,106 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1400;
 }
 
-.modal-content {
-    background: white;
+.reminders-modal .reminders-modal-content {
+    background: rgb(255, 200, 155) !important;
     padding: 20px;
-    border-radius: 5px;
-    width: 90%;
-    max-width: 500px;
+    border-radius: 10px;
+    width: 80% !important;
+    max-width: 250px !important;
     text-align: center;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.close-button {
+.reminders-modal-content .reminders-input {
+    text-align: center;
+    width: 70%;
+    font-size: 1rem;
+    margin: 10px 10px;
+}
+
+.reminders-modal-content h2 {
+    font-weight: bold;
+}
+
+.reminders-modal-content .reminders-button {
+    padding: 10px 20px;
+    background: #e8a038;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.reminders-modal-content .reminders-button:hover {
+    background: #d18f28;
+    transform: scale(1.05);
+}
+
+.reminders-modal-content .reminders-button:active {
+    transform: scale(0.95);
+}
+
+.reminders-modal-content .reminders-close-button {
     position: absolute;
     top: 10px;
     right: 10px;
     background: none;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    color: black;
     cursor: pointer;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.close-button:hover {
-    background-color: red;
+.reminders-modal-content .reminders-close-button:hover {
+    background-color: rgb(255, 47, 47);
+}
+
+.main-reminders-list {
+    background: rgb(255, 200, 155);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 180px;
+    margin: 100px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-reminders-list h2 {
+    font-weight: bold;
+}
+
+.open-reminders-list-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #e8a038;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.open-reminders-list-button:hover {
+    background-color: #d18f28;
+}
+
+.reminders-crossed {
+    text-decoration: line-through;
+    color: gray;
+    cursor: pointer;
 }

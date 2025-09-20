@@ -1,13 +1,13 @@
-ul {
+.shopping-list ul {
     list-style-type: none;
     padding: 0;
 }
 
-li {
+.shopping-list li {
     margin: 0.5rem 0;
 }
 
-.modal {
+.shopping-modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -17,9 +17,10 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1500;
 }
 
-.modal .modal-content {
+.shopping-modal .shopping-modal-content {
     background: rgb(254, 236, 155) !important;
     padding: 20px;
     border-radius: 10px;
@@ -30,18 +31,18 @@ li {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.modal-content input {
+.shopping-modal-content .shopping-input {
     text-align: center;
     width: 70%;
     font-size: 1rem;
     margin: 10px 10px;
 }
 
-.modal-content h2 {
+.shopping-modal-content h2 {
     font-weight: bold;
 }
 
-.modal-content button {
+.shopping-modal-content .shopping-button {
     padding: 10px 20px;
     background: #f0c040;
     color: white;
@@ -52,16 +53,16 @@ li {
     transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.modal-content button:hover {
+.shopping-modal-content .shopping-button:hover {
     background: #d9a030;
     transform: scale(1.05);
 }
 
-.modal-content button:active {
+.shopping-modal-content .shopping-button:active {
     transform: scale(0.95);
 }
 
-.modal-content button.close-button {
+.shopping-modal-content .shopping-close-button {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -71,14 +72,14 @@ li {
     color: black;
     cursor: pointer;
     border-radius: 50%;
-    width: 5px;
+    width: 30px;
     height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.modal-content button.close-button:hover {
+.shopping-modal-content .shopping-close-button:hover {
     background-color: rgb(255, 47, 47);
 }
 
@@ -88,7 +89,7 @@ li {
     border-radius: 10px;
     width: 90%;
     max-width: 180px;
-    margin: 50px auto;
+    margin: 100px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
@@ -114,7 +115,7 @@ li {
     background-color: #d9a030;
 }
 
-.crossed {
+.shopping-crossed {
     text-decoration: line-through;
     color: gray;
     cursor: pointer;
