@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import '../styles/ShoppingList.css';
 
-function ShoppingList({shoppingList, addItem}) {
+function ShoppingList({shoppingList, addItem, isModalOpen, setIsModalOpen}) {
   const [newItem, setNewItem] = useState("");
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleAddItem = () => {
     addItem(newItem);
@@ -13,8 +12,6 @@ function ShoppingList({shoppingList, addItem}) {
 
   return (
       <div className='shopping-list'>
-        <button onClick={() => setIsModalOpen(true)}>Open Shopping List</button>
-
         {isModalOpen && (
           <div className='modal'>
             <div className='modal-content'>
