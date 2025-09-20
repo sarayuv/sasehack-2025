@@ -26,6 +26,7 @@ li {
     width: 90%;
     max-width: 500px;
     text-align: center;
+    position: relative
 }
 
 .close-button {
@@ -35,7 +36,9 @@ li {
     background: none;
     border: none;
     font-size: 1.5rem;
+    color: black;
     cursor: pointer;
+    transition: color 0.3s ease;
 }
 
 .close-button:hover {

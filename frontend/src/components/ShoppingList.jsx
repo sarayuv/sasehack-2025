@@ -18,6 +18,7 @@ function ShoppingList({shoppingList, addItem}) {
         {isModalOpen && (
           <div className='modal'>
             <div className='modal-content'>
+              <button className='close-button' onClick={() => setIsModalOpen(false)}>X</button>
               <h2>Shopping List</h2>
               <ul>
                 {shoppingList.map((item, index) => (
@@ -31,7 +32,6 @@ function ShoppingList({shoppingList, addItem}) {
                 placeholder="Add new item" 
               />
               <button onClick={handleAddItem}>Add Item</button>
-              <button className='close-button' onClick={() => setIsModalOpen(false)}>Close</button>
             </div>
           </div>
         )}
