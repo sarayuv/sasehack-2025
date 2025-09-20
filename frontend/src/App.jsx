@@ -1,6 +1,5 @@
-import React from 'react'
-import {useState, useEffect} from 'react'
-import ShoppingList from './components/ShoppingList'
+import ShoppingList from './components/ShoppingList';
+import './App.css';
 
 function App() {
   return (
@@ -14,4 +13,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
