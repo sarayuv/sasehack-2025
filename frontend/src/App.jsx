@@ -2,12 +2,19 @@ import React, {useState, useEffect} from 'react';
 import ShoppingList from './components/ShoppingList';
 import Reminders from './components/Reminders';
 import Notes from './components/Notes';
+import Calendar from './components/Calendar';
 import './App.css';
 
 function App() {
   // Users
-  const users = ['Sarayu', 'Abhi', 'Sriram', 'Sita', 'Shiva'];
-  const [currentUser, setCurrentUser] = useState("");
+  const users = [
+    { name: 'Sarayu', color: '#FFB6C1' },
+    { name: 'Abhi', color: '#87CEEB' },
+    { name: 'Sriram', color: '#98FB98' },
+    { name: 'Sita', color: '#FFD700' },
+    { name: 'Shiva', color: '#DDA0DD' }
+  ];
+  const [currentUser, setCurrentUser] = useState(users[0].name);
 
   // Shopping Lists
   const [shoppingList, setShoppingList] = useState(() => {
@@ -29,6 +36,12 @@ function App() {
     return saved ? JSON.parse(saved) : [];
   });
   const [isNotesModalOpen, setIsNotesModalOpen] = useState(false);
+
+  // Calendar
+  const [events, setEvents] = useState(() => {
+    const saved = localStorage.getItem('events');
+    return saved ? JSON.parse(saved) : [];
+  });
 
   // Shopping List Logic
   const addItem = (text) => {
@@ -93,16 +106,29 @@ function App() {
     setShoppingList([]);
     setReminders([]);
     setNotes([]);
+    setEvents([]);
     localStorage.setItem('shoppingList', JSON.stringify([]));
     localStorage.setItem('reminders', JSON.stringify([]));
     localStorage.setItem('notes', JSON.stringify([]));
+    localStorage.setItem('events', JSON.stringify([]));
+  };
+
+  // Calendar Logic
+  const addEvent = (title, date, user) => {
+    if (title && date && user) {
+      setEvents(prev => {
+        const updated = [...prev, { id: Date.now() + Math.random(), title, date, user }];
+        localStorage.setItem('events', JSON.stringify(updated));
+        return updated;
+      });
+    }
   };
 
   return (
     <div className="App">
       <select className="user-dropdown" value={currentUser} onChange={(e) => setCurrentUser(e.target.value)}>
         {users.map(user => (
-          <option key={user} value={user}>{user}</option>
+          <option key={user.name} value={user.name}>{user.name}</option>
         ))}
       </select>
 
@@ -138,8 +164,9 @@ function App() {
         setIsNotesModalOpen={setIsNotesModalOpen}
       />
 
-      <div style={{ height:'200vh'}}></div>
+      <Calendar events={events} users={users} addEvent={addEvent} />
 
+      <div style={{ height:'200vh'}}></div>
     </div>
   );
 }
