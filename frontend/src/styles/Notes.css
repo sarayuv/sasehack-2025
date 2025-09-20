@@ -1,6 +1,6 @@
 .add-sticky-button {
     padding: 8px 20px;
-    background-color: #4CAF50;
+    background-color: #48abc3;
     color: white;
     border: none;
     border-radius: 8px;
@@ -11,7 +11,7 @@
 }
 
 .add-sticky-button:hover {
-    background-color: #45a049;
+    background-color: #3f8699;
 }
 
 .notes-display-area {
@@ -173,17 +173,18 @@
 
 .notes-button {
     padding: 10px 30px;
-    background: #4CAF50;
+    background: #48abc3;
     color: white;
     border: none;
     border-radius: 8px;
     font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .notes-button:hover {
-    background: #45a049;
+    background: #3f8699;
     transform: scale(1.05);
 }
 

@@ -109,7 +109,7 @@ const Calendar = ({ events, users, addEvent }) => {
                                     <option key={u.name} value={u.name}>{u.name}</option>
                                 ))}
                             </select>
-                            <button type="submit" className="calendar-add-button calendar-add-submit">Add</button>
+                            <button type="submit" className="calendar-add-button calendar-add-submit">Add Event</button>
                         </form>
                     </div>
                 </div>
