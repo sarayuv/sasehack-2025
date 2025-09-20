@@ -26,10 +26,16 @@
 }
 
 .calendar-add-title {
-  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
   font-weight: bold;
+  font-size: 2rem;
   text-align: center;
-  margin-bottom: 16px;
+}
+.calendar-modal-content h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
 }
 
 .calendar-input {
@@ -55,7 +61,7 @@
   justify-content: center;
 }
 .calendar-modal-content {
-  background: #fff;
+  background: rgb(240, 248, 255);
   padding: 32px 24px;
   border-radius: 16px;
   min-width: 320px;
@@ -65,13 +71,23 @@
 }
 .calendar-close-button {
   position: absolute;
-  top: 12px;
-  right: 16px;
+  top: 10px;
+  right: 10px;
   background: none;
   border: none;
-  font-size: 1.5em;
-  color: #333;
+  font-size: 1rem;
+  color: black;
   cursor: pointer;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar-close-button:hover {
+  background-color: rgb(255, 47, 47);
 }
 .calendar-events {
   margin-top: 24px;
@@ -94,7 +110,7 @@
 .calendar-add-button {
   margin-top: 16px;
   padding: 8px 20px;
-  background: #4CAF50;
+  background: #e52e3a;
   color: white;
   border: none;
   border-radius: 8px;
@@ -105,5 +121,5 @@
   transition: background 0.3s;
 }
 .calendar-add-button:hover {
-  background: #388e3c;
+  background: #b2091a;
 }

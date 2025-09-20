@@ -50,6 +50,16 @@ const Calendar = ({ events, users, addEvent }) => {
                     <div className="calendar-modal-content calendar-modal-month">
                         <button className="calendar-close-button" onClick={() => setIsMonthModalOpen(false)}>×</button>
                         <MonthCalendar events={events} users={users} />
+                            <button
+                                className="calendar-add-button"
+                                style={{marginTop: '24px', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}
+                                onClick={() => {
+                                    setIsMonthModalOpen(false);
+                                    setIsAddEventModalOpen(true);
+                                }}
+                            >
+                                + Add Event
+                            </button>
                     </div>
                 </div>
             )}
@@ -68,6 +78,7 @@ const Calendar = ({ events, users, addEvent }) => {
                                     setFormDate("");
                                     setFormUser(users[0]?.name || "");
                                     setIsAddEventModalOpen(false);
+                                    setIsMonthModalOpen(true);
                                 }
                             }}
                         >
@@ -98,7 +109,7 @@ const Calendar = ({ events, users, addEvent }) => {
                                     <option key={u.name} value={u.name}>{u.name}</option>
                                 ))}
                             </select>
-                            <button type="submit" className="calendar-add-button calendar-add-submit">Add</button>
+                            <button type="submit" className="calendar-add-button calendar-add-submit">Add Event</button>
                         </form>
                     </div>
                 </div>
