@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import '../styles/ShoppingList.css';
 
-function ShoppingList({shoppingList, addItem, isModalOpen, setIsModalOpen}) {
+function ShoppingList({shoppingList, addItem, isModalOpen, setIsModalOpen, crossedItems, toggleCrossItem}) {
   const [newItem, setNewItem] = useState("");
 
   const handleAddItem = () => {
@@ -19,7 +19,7 @@ function ShoppingList({shoppingList, addItem, isModalOpen, setIsModalOpen}) {
               <h2>Shopping List</h2>
               <ul>
                 {shoppingList.map((item, index) => (
-                  <li key={index}>{item}</li>
+                  <li key={index} className={crossedItems[index] ? "crossed" : ""} onClick={() => toggleCrossItem(index)}>{item}</li>
                 ))}
               </ul>
               <input 
