@@ -26,10 +26,16 @@
 }
 
 .calendar-add-title {
-  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
   font-weight: bold;
+  font-size: 2rem;
   text-align: center;
-  margin-bottom: 16px;
+}
+.calendar-modal-content h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
 }
 
 .calendar-input {
