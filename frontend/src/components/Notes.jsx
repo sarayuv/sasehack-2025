@@ -54,6 +54,9 @@ const Notes = ({ notes, addNote, deleteNote, isNotesModalOpen, setIsNotesModalOp
               ×
             </button>
             <div className="note-text">{note.text}</div>
+            <div className="note-user" style={{fontSize: '0.7em', marginTop: '8px', color: '#333'}}>
+              {note.user && '- ' + note.user}
+            </div>
           </div>
         ))}
       </div>

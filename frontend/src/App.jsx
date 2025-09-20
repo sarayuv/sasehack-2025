@@ -74,7 +74,7 @@ function App() {
   const addNote = (text, color) => {
     if (text.trim()) {
       setNotes((prev) => {
-        const updated = [...prev, { id: Date.now() + Math.random(), text, color }];
+        const updated = [...prev, {id: Date.now() + Math.random(), text, color, user: currentUser}];
         localStorage.setItem('notes', JSON.stringify(updated));
         return updated;
       });
