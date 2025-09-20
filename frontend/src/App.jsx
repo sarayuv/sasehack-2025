@@ -6,7 +6,7 @@ import './App.css';
 
 function App() {
   // Users
-  const users = ['Sarayu', 'Abhi', 'Sriram', 'Sita', 'Shiva'];
+  const users = ['Sarayu', 'Abhi', 'Sriram','Sita', 'Shiva'];
   const [currentUser, setCurrentUser] = useState("");
 
   // Shopping Lists
@@ -29,6 +29,14 @@ function App() {
     return saved ? JSON.parse(saved) : [];
   });
   const [isNotesModalOpen, setIsNotesModalOpen] = useState(false);
+
+  // Calendar
+  const [events, setEvents] = useState(() => {
+    const saved = localStorage.getItem('events');
+    return saved ? JSON.parse(saved) : [];
+  });
+  const [isCalendarModalOpen, setIsCalendarModalOpen] = useState(false);
+  const [isAddEventModalOpen, setIsAddEventModalOpen] = useState(false);
 
   // Shopping List Logic
   const addItem = (text) => {
