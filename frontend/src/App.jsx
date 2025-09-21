@@ -118,7 +118,6 @@ function App() {
     localStorage.setItem('reminders', JSON.stringify([]));
     localStorage.setItem('notes', JSON.stringify([]));
     localStorage.setItem('events', JSON.stringify([]));
-    setPhotoResetKey(prev => prev + 1);
     for (let i = 1; i <= 4; i++) {
       localStorage.removeItem(`fridgePhoto-${i}`);
     }
@@ -211,10 +210,10 @@ function App() {
         setIsNotesModalOpen={setIsNotesModalOpen}
       />
 
-      <Photos key={`photo1-${photoResetKey}`} x={400} y={200} resetKey={photoResetKey} slot={1} />
-      <Photos key={`photo2-${photoResetKey}`} x={400} y={700} resetKey={photoResetKey} slot={2} />
-      <Photos key={`photo3-${photoResetKey}`} x={800} y={370} resetKey={photoResetKey} slot={3} />
-      <Photos key={`photo4-${photoResetKey}`} x={750} y={1000} resetKey={photoResetKey} slot={4} />
+      <Photos key={`photo-slot-1-${photoResetKey}`} x={400} y={200} resetKey={photoResetKey} slot={1} />
+      <Photos key={`photo-slot-2-${photoResetKey}`} x={400} y={700} resetKey={photoResetKey} slot={2} />
+      <Photos key={`photo-slot-3-${photoResetKey}`} x={800} y={370} resetKey={photoResetKey} slot={3} />
+      <Photos key={`photo-slot-4-${photoResetKey}`} x={750} y={1000} resetKey={photoResetKey} slot={4} />
 
       <Calendar events={events} users={users} addEvent={addEvent} />
 
