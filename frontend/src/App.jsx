@@ -1,19 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import ShoppingList from './components/ShoppingList';
 import Reminders from './components/Reminders';
 import Notes from './components/Notes';
 import Photos from './components/Photos';
 import Calendar from './components/Calendar';
+import Select from 'react-select';
 import './App.css';
 
 function App() {
   // Users
   const users = [
-    { name: 'Fred', color: '#FFB6C1' },
-    { name: 'Susan', color: '#87CEEB' },
-    { name: 'Rachael', color: '#98FB98' },
-    { name: 'Jack', color: '#FFD700' },
-    { name: 'Margaret', color: '#DDA0DD' }
+    {name: 'Fred', color: '#FFB6C1'},
+    {name: 'Susan', color: '#87CEEB'},
+    {name: 'Rachael', color: '#98FB98'},
+    {name: 'Jack', color: '#FFD700'},
+    {name: 'Margaret', color: '#DDA0DD'}
   ];
   const [currentUser, setCurrentUser] = useState(users[0].name);
 
@@ -136,11 +137,47 @@ function App() {
 
   return (
     <div className="App">
-      <select className="user-dropdown" value={currentUser} onChange={(e) => setCurrentUser(e.target.value)}>
-        {users.map(user => (
-          <option key={user.name} value={user.name}>{user.name}</option>
-        ))}
-      </select>
+      <div style={{ position: 'fixed', top: 40, left: 60, zIndex: 2000, minWidth: 180 }}>
+        <Select
+          classNamePrefix="user-dropdown"
+          value={{ value: currentUser, label: currentUser, color: users.find(u => u.name === currentUser)?.color }}
+          onChange={option => setCurrentUser(option.value)}
+          options={users.map(user => ({value: user.name, label: user.name, color: user.color}))}
+          styles={{
+            option: (provided, state) => ({
+              ...provided,
+              backgroundColor: state.isSelected
+                ? state.data.color
+                : state.isFocused
+                ? state.data.color + '55'
+                : 'white',
+              color: 'black',
+              fontWeight: state.isSelected ? 'bold' : 'normal',
+              cursor: 'pointer',
+            }),
+            singleValue: (provided, state) => ({
+              ...provided,
+              backgroundColor: state.data.color,
+              color: 'black',
+              padding: '4px 12px',
+              borderRadius: '8px',
+              fontWeight: 'bold',
+            }),
+            control: (provided) => ({
+              ...provided,
+              borderRadius: '8px',
+              boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+              border: 'none',
+              minWidth: '120px',
+            }),
+            menu: (provided) => ({
+              ...provided,
+              borderRadius: '8px',
+              boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+            })
+          }}
+        />
+      </div>
 
       <button 
         className="clear-fridge-button" 
