@@ -16,7 +16,7 @@
 
 .notes-display-area {
     position: absolute;
-    bottom: 10px;
+    bottom: -230px;
     right: 350px;
     width: 400px;
     height: 400px;

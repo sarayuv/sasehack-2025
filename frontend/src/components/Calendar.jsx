@@ -118,7 +118,7 @@ const Calendar = ({ events, users, addEvent }) => {
     );
 };
 
-function MonthCalendar({ events, users }) {
+function MonthCalendar({events, users}) {
     const today = new Date();
     const year = today.getFullYear();
     const month = today.getMonth();
@@ -145,13 +145,13 @@ function MonthCalendar({ events, users }) {
 
     return (
         <div className="calendar-month-view">
-            <h2 style={{marginBottom: '16px', fontSize: '2.5em', fontWeight: 'bold', textAlign: 'center', letterSpacing: '2px'}}>{today.toLocaleString(undefined, { month: 'long', year: 'numeric' })}</h2>
+            <h2 className="calendar-month-title">{today.toLocaleString(undefined, { month: 'long', year: 'numeric' })}</h2>
             <div className="calendar-month-grid" style={{display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '8px'}}>
                 {["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].map(day => (
                     <div key={day} style={{fontWeight: 'bold', textAlign: 'center', marginBottom: '4px'}}>{day}</div>
                 ))}
                 {weeks.map((weekArr, wi) => weekArr.map((date, di) => (
-                    <div key={wi + '-' + di} className="calendar-month-day" style={{background: '#f7f7f7', borderRadius: '8px', minHeight: '80px', padding: '6px', textAlign: 'left', position: 'relative'}}>
+                    <div key={wi + '-' + di} className="calendar-month-day" style={{background: '#b2091a23', borderRadius: '8px', minHeight: '80px', padding: '6px', textAlign: 'left', position: 'relative'}}>
                         {date && <div style={{fontWeight: 'bold'}}>{date.getDate()}</div>}
                         {date && eventsByDay[monthDates.indexOf(date)].map(ev => {
                             const user = users.find(u => u.name === ev.user);

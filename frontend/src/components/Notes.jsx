@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import '../styles/Notes.css';
 
-const Notes = ({ notes, addNote, deleteNote, isNotesModalOpen, setIsNotesModalOpen }) => {
-  const [noteText, setNoteText] = useState('');
+const Notes = ({notes, addNote, deleteNote, isNotesModalOpen, setIsNotesModalOpen}) => {
+  const [noteText, setNoteText] = useState("");
   const [selectedColor, setSelectedColor] = useState('#FFE4B5');
 
   const colors = [

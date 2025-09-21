@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import '../styles/ShoppingList.css';
 
-const ShoppingList = ({ shoppingList, addItem, isShoppingModalOpen, setIsShoppingModalOpen, toggleCrossItem }) => {
-  const [newItem, setNewItem] = useState('');
+const ShoppingList = ({shoppingList, addItem, isShoppingModalOpen, setIsShoppingModalOpen, toggleCrossItem}) => {
+  const [newItem, setNewItem] = useState("");
 
   const handleAddItem = () => {
     if (newItem.trim()) {
@@ -12,28 +12,34 @@ const ShoppingList = ({ shoppingList, addItem, isShoppingModalOpen, setIsShoppin
   };
 
   return (
-    <div className="main-shopping-list" style={{ position: 'absolute', left: '320px', top: '80px' }}>
+    <div className="main-shopping-list" style={{position: 'absolute', left: '320px', top: '80px', cursor: 'pointer'}} onClick={() => setIsShoppingModalOpen(true)}>
       <h2>Shopping List</h2>
       <div>
         {shoppingList.map(item => (
           <div key={item.id}>
             <span
               className={item.crossedOut ? 'shopping-crossed' : ''}
-              onClick={() => toggleCrossItem(item.id)}
+              onClick={e => {
+                e.stopPropagation();
+                toggleCrossItem(item.id);
+              }}
             >
               {item.text}
             </span>
           </div>
         ))}
       </div>
-      <button className="open-shopping-list-button" onClick={() => setIsShoppingModalOpen(true)}>
-        Open
-      </button>
 
       {isShoppingModalOpen && (
         <div className="shopping-modal">
           <div className="shopping-modal-content">
-            <button className="shopping-close-button" onClick={() => setIsShoppingModalOpen(false)}>×</button>
+            <button 
+              className="shopping-close-button" 
+              onClick={e => {
+                e.stopPropagation();
+                setIsShoppingModalOpen(false);
+              }}
+            >×</button>
             <h2>Shopping List</h2>
             <div className="shopping-list">
               {shoppingList.map(item => (
