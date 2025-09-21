@@ -39,9 +39,7 @@ const ShoppingList = ({shoppingList, addItem, isShoppingModalOpen, setIsShopping
                 e.stopPropagation();
                 setIsShoppingModalOpen(false);
               }}
-            >
-              ×
-            </button>
+            >×</button>
             <h2>Shopping List</h2>
             <div className="shopping-list">
               {shoppingList.map(item => (

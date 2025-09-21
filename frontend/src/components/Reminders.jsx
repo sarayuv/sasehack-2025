@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import '../styles/Reminders.css';
 
-const Reminders = ({ reminders, addReminder, toggleCrossReminder, isRemindersModalOpen, setIsRemindersModalOpen }) => {
+const Reminders = ({reminders, addReminder, toggleCrossReminder, isRemindersModalOpen, setIsRemindersModalOpen}) => {
   const [newReminder, setNewReminder] = useState('');
 
   const handleAddReminder = () => {
@@ -12,14 +12,17 @@ const Reminders = ({ reminders, addReminder, toggleCrossReminder, isRemindersMod
   };
 
   return (
-    <div className="main-reminders-list" style={{ position: 'absolute', left: '540px', top: '80px' }}>
+    <div className="main-reminders-list" style={{position: 'absolute', left: '540px', top: '80px', cursor: 'pointer'}} onClick={() => setIsRemindersModalOpen(true)}>
       <h2>Reminders</h2>
       <div>
         {reminders.map(reminder => (
           <div key={reminder.id}>
             <span 
               className={reminder.crossedOut ? 'reminders-crossed' : ''} 
-              onClick={() => toggleCrossReminder(reminder.id)}
+              onClick={e => {
+                e.stopPropagation();
+                toggleCrossReminder(reminder.id);
+              }}
             >
               {reminder.text}
             </span>
@@ -27,14 +30,15 @@ const Reminders = ({ reminders, addReminder, toggleCrossReminder, isRemindersMod
         ))}
       </div>
       
-      <button className="open-reminders-list-button" onClick={() => setIsRemindersModalOpen(true)}>
-        Open
-      </button>
-
       {isRemindersModalOpen && (
         <div className="reminders-modal">
           <div className="reminders-modal-content">
-            <button className="reminders-close-button" onClick={() => setIsRemindersModalOpen(false)}>×</button>
+            <button 
+              className="reminders-close-button" 
+              onClick={e => {
+                e.stopPropagation();
+                setIsRemindersModalOpen(false);
+              }}>×</button>
             <h2>Reminders</h2>
             <div className="reminders-list">
               {reminders.map(reminder => (
