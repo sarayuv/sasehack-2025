@@ -174,10 +174,10 @@ function App() {
         setIsNotesModalOpen={setIsNotesModalOpen}
       />
 
-      <Photos key={`photo1-${photoResetKey}`} x={500} y={450} resetKey={photoResetKey} slot={1} />
-      <Photos key={`photo2-${photoResetKey}`} x={500} y={800} resetKey={photoResetKey} slot={2} />
-      <Photos key={`photo3-${photoResetKey}`} x={200} y={300} resetKey={photoResetKey} slot={3} />
-      <Photos key={`photo4-${photoResetKey}`} x={200} y={300} resetKey={photoResetKey} slot={4} />
+      <Photos key={`photo1-${photoResetKey}`} x={450} y={200} resetKey={photoResetKey} slot={1} />
+      <Photos key={`photo2-${photoResetKey}`} x={450} y={600} resetKey={photoResetKey} slot={2} />
+      <Photos key={`photo3-${photoResetKey}`} x={800} y={400} resetKey={photoResetKey} slot={3} />
+      <Photos key={`photo4-${photoResetKey}`} x={800} y={1100} resetKey={photoResetKey} slot={4} />
 
       <Calendar events={events} users={users} addEvent={addEvent} />
 
