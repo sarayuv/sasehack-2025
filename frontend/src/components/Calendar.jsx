@@ -68,7 +68,7 @@ const Calendar = ({ events, users, addEvent }) => {
                 <div className="calendar-modal">
                     <div className="calendar-modal-content calendar-modal-add">
                         <button className="calendar-close-button" onClick={() => setIsAddEventModalOpen(false)}>×</button>
-                        <h2 className="calendar-add-title">Add Event</h2>
+                        <h2>Add Event</h2>
                         <form
                             onSubmit={e => {
                                 e.preventDefault();

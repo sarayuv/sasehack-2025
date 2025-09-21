@@ -176,12 +176,12 @@ function App() {
 
       <Photos key={`photo1-${photoResetKey}`} x={400} y={200} resetKey={photoResetKey} slot={1} />
       <Photos key={`photo2-${photoResetKey}`} x={400} y={700} resetKey={photoResetKey} slot={2} />
-      <Photos key={`photo3-${photoResetKey}`} x={800} y={400} resetKey={photoResetKey} slot={3} />
-      <Photos key={`photo4-${photoResetKey}`} x={800} y={1100} resetKey={photoResetKey} slot={4} />
+      <Photos key={`photo3-${photoResetKey}`} x={800} y={370} resetKey={photoResetKey} slot={3} />
+      <Photos key={`photo4-${photoResetKey}`} x={750} y={1000} resetKey={photoResetKey} slot={4} />
 
       <Calendar events={events} users={users} addEvent={addEvent} />
 
-      <div style={{height:'200vh'}}></div>
+      <div style={{height:'180vh'}}></div>
     </div>
   );
 }
