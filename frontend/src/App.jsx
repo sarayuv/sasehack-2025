@@ -174,8 +174,8 @@ function App() {
         setIsNotesModalOpen={setIsNotesModalOpen}
       />
 
-      <Photos key={`photo1-${photoResetKey}`} x={450} y={200} resetKey={photoResetKey} slot={1} />
-      <Photos key={`photo2-${photoResetKey}`} x={450} y={600} resetKey={photoResetKey} slot={2} />
+      <Photos key={`photo1-${photoResetKey}`} x={400} y={200} resetKey={photoResetKey} slot={1} />
+      <Photos key={`photo2-${photoResetKey}`} x={400} y={700} resetKey={photoResetKey} slot={2} />
       <Photos key={`photo3-${photoResetKey}`} x={800} y={400} resetKey={photoResetKey} slot={3} />
       <Photos key={`photo4-${photoResetKey}`} x={800} y={1100} resetKey={photoResetKey} slot={4} />
 
