@@ -2,11 +2,7 @@
 EXAMPLE STRUCUTRE OF A PROJECT README. YOU DON'T NEED TO USE THIS ONE FR FR
 -->
 
-# 
-
-$$
-Fred's Fridge
-$$
+# Fred's Fridge
 
 
 **Team Members:** `Abhiram Yammanuru, Sarayu Vjiayanagaram`
@@ -18,51 +14,49 @@ $$
 ## Inspiration
 
 
-`So, one of the central locations for many families is their refrigerator. They usually have some kind of calendar, images of the family, and shopping lists. Each families refrigerator is personal and intimate. Fred's Fridge take's that space and digitizes it, providing a platform for families to be more interconnected. Your family's highest moments get highlighted on this fridge. This is catered towards Fred, who is someone who cares a lot about family. The main problem that this solves for him is a way for him to stay connected to his family, in a way that is very homey. For someone like Fred, who seems like the type of guy to have a family some day, it would be a great app to connect with his new family as well. `
+`One of the central locations at home for many families is their refrigerator. They generally have some kind of calendar, pictures, and shopping lists. Each family's fridge is personal and intimate. Your family's highest moments get highlighted on this fridge. Fred's Fridge takes that space and digitizes it, providing a platform for families to be more interconnected. This is catered towards Fred, who is someone who cares a lot about family. The main problem that this solves for him is a way for him to stay connected to his family, in a way that is very homey. For someone like Fred, who seems like the type of guy to have a family some day, it would be a great app to connect with his new family as well. `
 
 ## What It Does
 
-<!--
-This is the spot for a GIF of your project in action! ✨
-Pro-Tip: Use a free tool like Giphy Capture or Kap to record a short, silent GIF of your app's main features. It's the best way to show off your work.
--->
-
-<!--
-Use a bulleted list to describe the key features of your project. Be specific!
--->
 
 - **Shopping List:** `The shopping list is a part of the fridge in which a user can add an item to it, and can click on that specific item to run a strikethrough thru it. Similar to reminders, but catered towards shopping.`
 
-## ADD GIF OR IMAGE HERE
+![ShoppingList1](sasehack-screenshots/shoppinglist.png "Shopping List")
+![ShoppingList1](sasehack-screenshots/shoppinglist2.png "Shopping List on Fridge")
 
 - **Reminders:** `Reminders is a part of the fridge in which a user can add a reminder to a list of reminders, and can click on it to run a strikethrough thru it. Similar to shopping list, but catered towards general reminders and to-dos.`
 
-## ADD GIF OR IMAGE HERE
+![Reminders1](sasehack-screenshots/reminders1.png "Reminders")  
+![Reminders2](sasehack-screenshots/reminders2.png "Adding reminder")  
 
 - **Shared Calendar:** `[Description of the third key feature.]`
 
-## ADD GIF OR IMAGE HERE
+![SharedCalendar1](sasehack-screenshots/calendar1.png "Calendar view")  
+![SharedCalendar2](sasehack-screenshots/calendar2.png "Adding event")  
 
 - **Sticky Notes:** `Sticky notes have their own button, in which a user can add text and add a virtual sticky note to the fridge.`
 
-## ADD GIF OR IMAGE HERE
+![StickyNotes1](sasehack-screenshots/stickynotes1.png "Adding a sticky")  
+![StickyNotes2](sasehack-screenshots/stickynotes2.png "Stickies on the fridge" )
 
-- **Photos:** `Photos have their own button in which a user can add their own images to personalize the family's fridge. `
+- **Photos:** `Photos have their own button in which a user can add their own images to personalize the family's fridge.`
 
-## ADD GIF OR IMAGE HERE
+![Photos1](sasehack-screenshots/photos.png "Adding a photo")  
 
-- **Users:** `[Description of the third key feature.]`
+- **Users:** `You are able to assign events to Users and are able to switch users`
 
-## ADD GIF OR IMAGE HERE
+![Users1](sasehack-screenshots/users.png "Changing users")  
 
-- **Clear Fridge:** `This button ensures that t`
+- **Clear Fridge:** `This button can clear the entire fridge`
 
-## ADD GIF OR IMAGE HERE
+![clearFridge](sasehack-screenshots/clearfridge.png "Clearing Fridge")
+![clearFridge2](sasehack-screenshots/clearfridge2.png "Emphasizing the fully cleared fridge")
+
 
 ## How We Built It
 
 
-- **Frontend:** `React, Vite, JavaScript, CSS, SCG Assets`
+- **Frontend:** `React, Vite, JavaScript, CSS, SVG Assets`
 
 - **Backend:** `Python, Flask`
 
@@ -70,7 +64,7 @@ Use a bulleted list to describe the key features of your project. Be specific!
 ## Challenges We Ran Into
 
 
-`The biggest challenge that we ran into was local storage. We wanted there to be a way in which we could reload the page and have specific items (such as sticky notes and photos) to stay and not be refreshed. It took some googling, but we were able to understand it and get it working`. 
+`The biggest challenge that we ran into was local storage. We wanted there to be a way in which we could reload the page and have specific items (such as sticky notes and photos) to stay and not be refreshed.`
 
 ## Accomplishments We're Proud Of
 
