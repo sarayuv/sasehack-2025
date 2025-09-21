@@ -121,6 +121,7 @@ function App() {
     for (let i = 1; i <= 4; i++) {
       localStorage.removeItem(`fridgePhoto-${i}`);
     }
+    setPhotoResetKey(prev => prev + 1);
   };
 
   // Calendar Logic
