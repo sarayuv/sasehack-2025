@@ -9,11 +9,11 @@ import './App.css';
 function App() {
   // Users
   const users = [
-    { name: 'Sarayu', color: '#FFB6C1' },
-    { name: 'Abhi', color: '#87CEEB' },
-    { name: 'Sriram', color: '#98FB98' },
-    { name: 'Sita', color: '#FFD700' },
-    { name: 'Shiva', color: '#DDA0DD' }
+    { name: 'Fred', color: '#FFB6C1' },
+    { name: 'Susan', color: '#87CEEB' },
+    { name: 'Rachael', color: '#98FB98' },
+    { name: 'Jack', color: '#FFD700' },
+    { name: 'Margaret', color: '#DDA0DD' }
   ];
   const [currentUser, setCurrentUser] = useState(users[0].name);
 
@@ -77,6 +77,7 @@ function App() {
       });
     }
   };
+
   const toggleCrossReminder = (id) => {
     setReminders((prev) => {
       const updated = prev.map(reminder =>
@@ -97,6 +98,7 @@ function App() {
       });
     }
   };
+
   const deleteNote = (id) => {
     setNotes((prev) => {
       const updated = prev.filter(note => note.id !== id);
@@ -111,11 +113,14 @@ function App() {
     setReminders([]);
     setNotes([]);
     setEvents([]);
-    setPhotoResetKey(prev => prev + 1); // reset all Photos
     localStorage.setItem('shoppingList', JSON.stringify([]));
     localStorage.setItem('reminders', JSON.stringify([]));
     localStorage.setItem('notes', JSON.stringify([]));
     localStorage.setItem('events', JSON.stringify([]));
+    setPhotoResetKey(prev => prev + 1);
+    for (let i = 1; i <= 4; i++) {
+      localStorage.removeItem(`fridgePhoto-${i}`);
+    }
   };
 
   // Calendar Logic
@@ -133,9 +138,7 @@ function App() {
     <div className="App">
       <select className="user-dropdown" value={currentUser} onChange={(e) => setCurrentUser(e.target.value)}>
         {users.map(user => (
-
           <option key={user.name} value={user.name}>{user.name}</option>
-
         ))}
       </select>
 
@@ -171,13 +174,14 @@ function App() {
         setIsNotesModalOpen={setIsNotesModalOpen}
       />
 
-      <Photos key={`photo1-${photoResetKey}`} x={500} y={450} resetKey={photoResetKey} />
-      <Photos key={`photo2-${photoResetKey}`} x={500} y={800} resetKey={photoResetKey} />
-      <Photos key={`photo3-${photoResetKey}`} x={200} y={300} resetKey={photoResetKey} />
-      <Photos key={`photo4-${photoResetKey}`} x={200} y={300} resetKey={photoResetKey} />
+      <Photos key={`photo1-${photoResetKey}`} x={500} y={450} resetKey={photoResetKey} slot={1} />
+      <Photos key={`photo2-${photoResetKey}`} x={500} y={800} resetKey={photoResetKey} slot={2} />
+      <Photos key={`photo3-${photoResetKey}`} x={200} y={300} resetKey={photoResetKey} slot={3} />
+      <Photos key={`photo4-${photoResetKey}`} x={200} y={300} resetKey={photoResetKey} slot={4} />
+
       <Calendar events={events} users={users} addEvent={addEvent} />
 
-      <div style={{ height:'200vh'}}></div>
+      <div style={{height:'200vh'}}></div>
     </div>
   );
 }
