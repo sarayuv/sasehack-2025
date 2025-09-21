@@ -9,32 +9,36 @@ EXAMPLE STRUCUTRE OF A PROJECT README. YOU DON'T NEED TO USE THIS ONE FR FR
 
 ## 💬 Elevator Pitch
 
-`Fred's Fridge is an app made for families for them to connect over their own virtual "fridge"`
+`Fred's Fridge is a cozy virtual fridge for families to connect!"`
 
 ## Inspiration
 
 
-`One of the central locations at home for many families is their refrigerator. They generally have some kind of calendar, pictures, and shopping lists. Each family's fridge is personal and intimate. Your family's highest moments get highlighted on this fridge. Fred's Fridge takes that space and digitizes it, providing a platform for families to be more interconnected. This is catered towards Fred, who is someone who cares a lot about family. The main problem that this solves for him is a way for him to stay connected to his family, in a way that is very homey. For someone like Fred, who seems like the type of guy to have a family some day, it would be a great app to connect with his new family as well. `
+`Family-oriented Fred is at a stage where staying organized and connected with his loved ones matters more than ever. But with busy schedules, grocery lists on scraps of paper, and family updates scattered across group chats, it’s easy for things to slip through the cracks. One of the central locations at home for many families is their refrigerator.` 
+
+`Each family's fridge is personal and intimate with memories all over it. Your family's highest moments get highlighted on this fridge.` 
+
+`Fred's Fridge takes that shared space and digitizes it, providing a platform for families to be more interconnected. The main problem that this solves for Fred is a way for him to stay connected to his family, in a way that is very homey.`
 
 ## What It Does
 
 
-- **Shopping List:** `The shopping list is a part of the fridge in which a user can add an item to it, and can click on that specific item to run a strikethrough thru it. Similar to reminders, but catered towards shopping.`
+- **Shopping List:** `The shopping list is a part of the fridge in which a user can add an item to it, and can click on that specific item to run a strikethrough through it. This is similar to reminders, but geared towards shopping needs.`
 
 ![ShoppingList1](sasehack-screenshots/shoppinglist.png "Shopping List")
 ![ShoppingList1](sasehack-screenshots/shoppinglist2.png "Shopping List on Fridge")
 
-- **Reminders:** `Reminders is a part of the fridge in which a user can add a reminder to a list of reminders, and can click on it to run a strikethrough thru it. Similar to shopping list, but catered towards general reminders and to-dos.`
+- **Reminders:** `Reminders is a part of the fridge in which a user can add a reminder to a list of reminders, and can click on it to run a strikethrough through it. This is similar to shopping list, but catered towards general reminders and to-dos.`
 
 ![Reminders1](sasehack-screenshots/reminders1.png "Reminders")  
 ![Reminders2](sasehack-screenshots/reminders2.png "Adding reminder")  
 
-- **Shared Calendar:** `[Description of the third key feature.]`
+- **Shared Calendar:** `The shared calendar is a way for different members of the family to create events, and assign those events to specific people. Everyone will be able to see the events, and this creates a unified space for all upcoming events.`
 
 ![SharedCalendar1](sasehack-screenshots/calendar1.png "Calendar view")  
 ![SharedCalendar2](sasehack-screenshots/calendar2.png "Adding event")  
 
-- **Sticky Notes:** `Sticky notes have their own button, in which a user can add text and add a virtual sticky note to the fridge.`
+- **Sticky Notes:** `Sticky notes have their own button, in which a user can add text and add a virtual sticky note to the fridge. These stickies can be colored, and states which user created it.`
 
 ![StickyNotes1](sasehack-screenshots/stickynotes1.png "Adding a sticky")  
 ![StickyNotes2](sasehack-screenshots/stickynotes2.png "Stickies on the fridge" )
@@ -43,7 +47,7 @@ EXAMPLE STRUCUTRE OF A PROJECT README. YOU DON'T NEED TO USE THIS ONE FR FR
 
 ![Photos1](sasehack-screenshots/photos.png "Adding a photo")  
 
-- **Users:** `You are able to assign events to Users and are able to switch users`
+- **Users:** `You are able to assign events to Users and are able to switch users. This involves having their own sticky notes, as well as creating and viewing events on the shared calendar.`
 
 ![Users1](sasehack-screenshots/users.png "Changing users")  
 
@@ -64,12 +68,12 @@ EXAMPLE STRUCUTRE OF A PROJECT README. YOU DON'T NEED TO USE THIS ONE FR FR
 ## Challenges We Ran Into
 
 
-`The biggest challenge that we ran into was local storage. We wanted there to be a way in which we could reload the page and have specific items (such as sticky notes and photos) to stay and not be refreshed.`
+`The first challenge that we ran into was narrowing down our scope and vision. We had a lot of ideas, but with the time frame it became a bit too ambitious. We decided to pivot and make sure that the features we delivered were functional. Secondly, we had limited experience with React, so the learning curve was challenging. The biggest challenge that we ran into was local storage. We wanted there to be a way in which we could reload the page and have specific items (such as sticky notes and photos) to stay and not be refreshed. `
 
 ## Accomplishments We're Proud Of
 
 
-`We are most proud of the UI for the photos. Not only do they import without many issues, they have a cute red "magnet" at the top which gives it a more realistic view. It's a very small thing, but I feel like it really puts things together. It also creates a small border for each of the photos, further making them look more realistic and cuter.`
+`We are most proud of the UI for the photos. Not only do they import without many issues, they have a cute red "magnet" at the top which gives it a more realistic view. It's a very small thing, but we feel like it really puts things together. It also creates a small border for each of the photos, further making them look more realistic and cuter.`
 
 ## What We Learned
 
