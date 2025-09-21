@@ -22,7 +22,7 @@ function getMonthDates(year, month) {
     return days;
 }
 
-const Calendar = ({ events, users, addEvent }) => {
+const Calendar = ({events, users, addEvent}) => {
     const [isMonthModalOpen, setIsMonthModalOpen] = useState(false);
     const [isAddEventModalOpen, setIsAddEventModalOpen] = useState(false);
     const [formTitle, setFormTitle] = useState("");
@@ -41,9 +41,7 @@ const Calendar = ({ events, users, addEvent }) => {
             <button
                 className="calendar-add-button calendar-add-event-btn"
                 onClick={() => setIsAddEventModalOpen(true)}
-            >
-                + Add Event
-            </button>
+            >+ Add Event</button>
 
             {isMonthModalOpen && (
                 <div className="calendar-modal">

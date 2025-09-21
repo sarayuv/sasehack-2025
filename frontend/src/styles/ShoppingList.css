@@ -57,16 +57,11 @@
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
+    transition: background 0.3s ease;
 }
 
 .shopping-modal-content .shopping-button:hover {
     background: #d9a030;
-    transform: scale(1.05);
-}
-
-.shopping-modal-content .shopping-button:active {
-    transform: scale(0.95);
 }
 
 .shopping-modal-content .shopping-close-button {

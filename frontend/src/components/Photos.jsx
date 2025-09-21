@@ -23,7 +23,10 @@ export default function Photos({x = 50, y = 100, resetKey, slot = 1}) {
   };
 
   return (
-    <div className="photos" style={{top: `${y}px`, left: `${x}px`}}>
+    <div
+      className="photos"
+      style={{position: 'absolute', top: `${y}px`, left: `${x}px`}}
+    >
       {!uploadedPhoto ? (
         <label className="upload-label">
           + Add Photo
@@ -31,7 +34,7 @@ export default function Photos({x = 50, y = 100, resetKey, slot = 1}) {
             type="file"
             accept="image/*"
             onChange={handleUpload}
-            style={{display: "none"}}
+            style={{ display: "none" }}
           />
         </label>
       ) : (

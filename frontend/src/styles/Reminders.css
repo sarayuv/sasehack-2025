@@ -51,22 +51,17 @@
 
 .reminders-modal-content .reminders-button {
     padding: 2px 12px;
-    background: #f0c040;
+    background: #e5902f;
     color: white;
     border: none;
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
+    transition: background 0.3s ease;
 }
 
 .reminders-modal-content .reminders-button:hover {
-    background: #d9a030;
-    transform: scale(1.05);
-}
-
-.reminders-modal-content .reminders-button:active {
-    transform: scale(0.95);
+    background: #ea7f04;
 }
 
 .reminders-modal-content .reminders-close-button {
@@ -106,21 +101,6 @@
 
 .main-reminders-list h2 {
     font-weight: bold;
-}
-
-.open-reminders-list-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #e8a038;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.open-reminders-list-button:hover {
-    background-color: #d18f28;
 }
 
 .reminders-crossed {
